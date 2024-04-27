@@ -72,7 +72,7 @@ ol {
 }
 
 .content__details {
-  width: 399px;
+  max-width: 399px;
   display: flex;
   flex-direction: column;
   gap: 26px;
@@ -81,19 +81,15 @@ ol {
 
 .result__video-container {
   position: relative;
-  width: 711px;
+  max-width: 711px;
   height: 386px;
   margin: 0 0 16px 0;
 }
 
 .result__video {
-  object-fit: cover;
-  width: inherit;
+  object-position: center;
+  max-width: inherit;
   height: inherit;
-}
-
-.content__list-item:not(:last-child) {
-  margin: 0 0 30px;
 }
 
 .content__video-card {
@@ -101,7 +97,7 @@ ol {
 }
 
 .content__video-card-thumbnail {
-  width: 194px;
+  max-width: 194px;
   height: 103px;
   margin-left: auto;
   object-fit: cover;
@@ -111,7 +107,7 @@ ol {
 .content__video-card-description-container {
   display: flex;
   flex-direction: column;
-  width: 200px;
+  max-width: 200px;
 }
 
 .search-form__fieldset-title {
@@ -153,8 +149,7 @@ ol {
   background: #545050;
 }
 
-.content__card-link:hover .content__video-card-title,
-.content__card-link:hover .content__video-card-description {
+.content__card-link:hover {
   text-decoration: underline;
 }
 
@@ -169,6 +164,9 @@ ol {
   line-height: 30px;
   color: #fff;
   text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .content__video-card-description {
@@ -185,7 +183,7 @@ ol {
 }
 /* Список */
 .search-form__textfield {
-  font-family: "Fira Sans Condensed", sans-serif;
+  font-family: inherit;
   font-size: 18px;
   font-weight: 400;
   width: 224px;
@@ -198,6 +196,18 @@ ol {
   border-bottom: 1px solid #fff;
   appearance: none;
 }
+
+.search-form__label:has(.search-form__textfield:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.search-form__textfield:focus,
+.search-form__textfield:focus-visible, 
+.search-form__label:has(.search-form__textfield:focus){
+  outline: none;
+}
+
 /* Чекбоксы с лейблами */
 .search-form__label {
   display: flex;
@@ -254,7 +264,7 @@ ol {
 
 .button:focus-visible {
   outline: 1px solid #fff;
-  outline-offset: 2px;
+  outline-offset: -5px;
 }
 
 .button:active {
