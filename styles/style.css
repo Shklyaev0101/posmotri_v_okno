@@ -72,7 +72,7 @@ ol {
 }
 
 .content__details {
-  max-width: 399px;
+  width: 399px;
   display: flex;
   flex-direction: column;
   gap: 26px;
@@ -81,15 +81,16 @@ ol {
 
 .result__video-container {
   position: relative;
-  max-width: 711px;
+  width: 711px;
   height: 386px;
-  margin: 0 0 16px 0;
+  margin: 78px 0 16px;
 }
 
 .result__video {
   object-position: center;
-  max-width: inherit;
+  width: inherit;
   height: inherit;
+  object-fit: cover;
 }
 
 .content__video-card {
@@ -97,7 +98,7 @@ ol {
 }
 
 .content__video-card-thumbnail {
-  max-width: 194px;
+  width: 194px;
   height: 103px;
   margin-left: auto;
   object-fit: cover;
@@ -108,6 +109,8 @@ ol {
   display: flex;
   flex-direction: column;
   max-width: 200px;
+  padding: 4px 0;
+  gap: 4px;
 }
 
 .search-form__fieldset-title {
@@ -121,7 +124,7 @@ ol {
   font-family: Oswald, sans-serif;
   font-size: 75px;
   font-weight: 700;
-  line-height: 70.5px;
+  line-height: 68px;
   text-transform: uppercase;
   color: #fff;
 }
@@ -167,6 +170,7 @@ ol {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  max-width: 199px;
 }
 
 .content__video-card-description {
@@ -202,9 +206,7 @@ ol {
   outline-offset: 1px;
 }
 
-.search-form__textfield:focus,
-.search-form__textfield:focus-visible, 
-.search-form__label:has(.search-form__textfield:focus){
+.search-form__textfield:focus{
   outline: none;
 }
 
@@ -264,7 +266,7 @@ ol {
 
 .button:focus-visible {
   outline: 1px solid #fff;
-  outline-offset: -5px;
+  outline-offset: 1px;
 }
 
 .button:active {
